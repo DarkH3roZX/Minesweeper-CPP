@@ -1,12 +1,16 @@
-﻿  Grid.cpp
+﻿  Game.cpp
+  Grid.cpp
+  GridData.cpp
   Item.cpp
   Minesweeper.cpp
-C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\Minesweeper\Minesweeper.cpp(86,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\Minesweeper\Minesweeper.cpp(284,51): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\Minesweeper\Minesweeper.cpp(549,53): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
-C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\Minesweeper\Minesweeper.cpp(749,43): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
-C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\Minesweeper\Minesweeper.cpp(805,43): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
-C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\Minesweeper\Minesweeper.cpp(52,9): warning C4101: 'price': unreferenced local variable
-C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\Minesweeper\Minesweeper.cpp(32,9): warning C4101: 'tempInt': unreferenced local variable
+D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\Minesweeper\Minesweeper.cpp(86,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\Minesweeper\Minesweeper.cpp(284,51): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\Minesweeper\Minesweeper.cpp(549,53): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\Minesweeper\Minesweeper.cpp(749,43): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\Minesweeper\Minesweeper.cpp(805,43): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\Minesweeper\Minesweeper.cpp(52,9): warning C4101: 'price': unreferenced local variable
+D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\Minesweeper\Minesweeper.cpp(32,9): warning C4101: 'tempInt': unreferenced local variable
+  PlayerData.cpp
+  Utilities.cpp
   Generating Code...
-  Minesweeper.vcxproj -> C:\Users\evanl\OneDrive\Documents\_Coding\C++\Project\Minesweeper\x64\Debug\Minesweeper.exe
+  Minesweeper.vcxproj -> D:\E_Work\AlgoProg\GithubRepo\Minesweeper-CPP\x64\Debug\Minesweeper.exe
