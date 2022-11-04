@@ -25,11 +25,11 @@ bool Item::checkBuyable(int itemIndex, int amount, int lel) {
 	if (itemIndex == 1)
 		price = 50; // Gold Pig
 	else if (itemIndex == 2)
-		price = 150; // Time Machine
+		price = 150; // Mine Detector
 	else if (itemIndex == 3)
 		price = 225; // Magnifying Glass
 	else if (itemIndex == 4)
-		price = 300; // Mine Detector
+		price = 300; // Time Machine
 	else if (itemIndex == 5)
 		price = 400; // Force Field
 
@@ -161,7 +161,7 @@ void Item::mineDetector(int row, int column) {
 	// Case 2 - Correct Flag
 	// Case 3 - Unfound bomb Flag
 	if (grid[y][x].isFlag && grid[y][x].symbol != '*')
-		cout << (char)(x + 'A') << row - y << "is not a bomb!";
+		cout << (char)(x + 'A') << row - y << " is not a bomb!";
 	else if (grid[y][x].isFlag && grid[y][x].symbol == '*')
 		cout << "Flag on " << (char)(x + 'A') << row - y << " is already placed correctly!";
 	else

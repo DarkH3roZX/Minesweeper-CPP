@@ -606,9 +606,9 @@ int main()
                                 do
                                 {
                                     cout << endl << "1. Gold Pig (" << player[currPlayer].getInventory(0) << ")" << endl;
-                                    cout << "2. Time Machine (" << player[currPlayer].getInventory(1) << ")" << endl;
+                                    cout << "2. Mine Detector (" << player[currPlayer].getInventory(1) << ")" << endl;
                                     cout << "3. Magnifying Glass (" << player[currPlayer].getInventory(2) << ")" << endl;
-                                    cout << "4. Mine Detector (" << player[currPlayer].getInventory(3) << ")" << endl;
+                                    cout << "4. Time Machine (" << player[currPlayer].getInventory(3) << ")" << endl;
                                     cout << "5. Force Field (" << player[currPlayer].getInventory(4) << ")" << endl;
                                     cout << "6. Exit" << endl << endl;
 
@@ -641,7 +641,7 @@ int main()
                                     }
                                 }
 
-                                // Time Machine
+                                // Mine Detector
                                 else if (itemWarp == 2) {
                                     if (roundZero) {
                                         cout << "Initialize the grid first before using!";
@@ -652,7 +652,7 @@ int main()
                                         cin.get();
                                     }
                                     else {
-                                        grid.item.timeMachine(row, column);
+                                        grid.item.mineDetector(row, column);
                                         player[currPlayer].editInventory(1, 1, "Use");
 
                                         // File Update
@@ -679,7 +679,7 @@ int main()
                                     }
                                 }
 
-                                // Mine Detector
+                                // Time Machine
                                 else if (itemWarp == 4) {
                                     if (roundZero) {
                                         cout << "Initialize the grid first before using!";
@@ -690,7 +690,7 @@ int main()
                                         cin.get();
                                     }
                                     else {
-                                        grid.item.mineDetector(row, column);
+                                        grid.item.timeMachine(row, column);
                                         player[currPlayer].editInventory(3, 1, "Use");
 
                                         // File Update
@@ -979,9 +979,9 @@ int main()
                         cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", "Num", "Item Name", "Price", "Owned") << endl;
                         cout << "===========================================" << endl;
                         cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 1, "Gold Pig", "50 LEL", player[currPlayer].getInventory(0)) << endl;
-                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 2, "Time Machine", "150 LEL", player[currPlayer].getInventory(1)) << endl;
+                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 2, "Mine Detector", "150 LEL", player[currPlayer].getInventory(1)) << endl;
                         cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 3, "Magnifying Glass", "225 LEL", player[currPlayer].getInventory(2)) << endl;
-                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 4, "Mine Detector", "300 LEL", player[currPlayer].getInventory(3)) << endl;
+                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 4, "Time Machine", "300 LEL", player[currPlayer].getInventory(3)) << endl;
                         cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 5, "Force Field", "400 LEL", player[currPlayer].getInventory(4)) << endl << endl;
 
                         cout << "Cash : " << player[currPlayer].moneyDisplay() << endl;
@@ -1105,9 +1105,9 @@ int main()
                         utility.logo();
 
                         cout << "1. Gold Pig" << endl;
-                        cout << "2. Time Machine" << endl;
+                        cout << "2. Mine Detector" << endl;
                         cout << "3. Magnifying Glass" << endl;
-                        cout << "4. Mine Detector" << endl;
+                        cout << "4. Time Machine" << endl;
                         cout << "5. Force Field" << endl << endl;
 
                         cout << "Input item name : ";
