@@ -23,15 +23,15 @@ bool Item::checkBuyable(int itemIndex, int amount, int lel) {
 
 	// Check the item price
 	if (itemIndex == 1)
-		price = 100; // Gold Pig
+		price = 50; // Gold Pig
 	else if (itemIndex == 2)
-		price = 300; // Time Machine
+		price = 150; // Time Machine
 	else if (itemIndex == 3)
-		price = 500; // Magnifying Glass
+		price = 225; // Magnifying Glass
 	else if (itemIndex == 4)
-		price = 750; // Mine Detector
+		price = 300; // Mine Detector
 	else if (itemIndex == 5)
-		price = 1000; // Force Field
+		price = 400; // Force Field
 
 	// Checks if the item is buyable
 	if (price * amount <= lel)

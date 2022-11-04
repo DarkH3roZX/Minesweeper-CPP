@@ -628,6 +628,10 @@ int main()
                                         cout << "Insufficent amount!";
                                         cin.get();
                                     }
+                                    else if (doubleMoney) {
+                                        cout << "Item already activated!";
+                                        cin.get();
+                                    }
                                     else {
                                         items.goldPig(&doubleMoney);
                                         player[currPlayer].editInventory(0, 1, "Use");
@@ -700,6 +704,10 @@ int main()
                                         cout << "Insufficent amount!";
                                         cin.get();
                                     }
+                                    else if (shield) {
+                                        cout << "Item already active!";
+                                        cin.get();
+                                    }
                                     else {
                                         grid.item.forceField(&shield);
                                         player[currPlayer].editInventory(4, 1, "Use");
@@ -726,7 +734,7 @@ int main()
                             }
 
                             // Check success
-                            if (!deathFlag && grid.checkVictory()) {
+                            if (!roundZero && !deathFlag && grid.checkVictory()) {
                                 successFlag = true;
                             }
                         }
