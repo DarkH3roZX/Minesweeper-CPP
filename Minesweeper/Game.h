@@ -27,6 +27,8 @@ class Game {
 		void timeDisplay(int second);
 
 		void instructions();
+
+		void symbolPrint(char symbol);
 };
 
 #endif

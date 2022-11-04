@@ -90,7 +90,7 @@ void Game::instructions() {
 
 				cout << "- Your objectives is to find all the bombs in the grid and if you do, you win." << endl;
 				cout << "- The number indicates the amount of bombs available in the area around the number." << endl;
-				cout << "  (For example 2 means there is 2 bomb in the area around the number." << endl;
+				cout << "  (For example 2 means there are 2 bombs in the area around the number)" << endl;
 				cout << "- If you think that the box is a bomb, you should flag the box." << endl << endl;
 
 				cout << "Press 'Enter' to go back to instructions menu!";
@@ -123,9 +123,9 @@ void Game::instructions() {
 				
 				cout << "(Empty Board) : Unopened" << endl << endl;
 
-				cout << "II. Shortcuts";
+				cout << "II. Shortcuts" << endl;
 				cout << "- If all the flag requirement is put around a box, you can open the area all around" << endl;
-				cout << "  that box. If you misplace the flag, you will die." << endl;
+				cout << "  that box by inputting that opened box on the cell input. If you misplace the flag, you will die." << endl;
 				cout << "- If the opened box is a 0, the area around it will open automatically" << endl << endl;
 
 				cout << "III. Cell Input" << endl;
@@ -163,6 +163,7 @@ void Game::instructions() {
 
 				cout << "V. FORCE FIELD" << endl;
 				cout << "- Protects the player from death." << endl;
+				cout << "- It only protect once." << endl;
 				cout << "- This item will expire when the player wins the game." << endl << endl;
 
 				cout << "Press 'Enter' to go back to instructions menu!";
@@ -173,24 +174,154 @@ void Game::instructions() {
 			case 4:
 				utils.subtitle("Tips & Tricks");
 
+				cout << "Symbols:" << endl;
+				cout << "- F = Fixed Bomb" << endl;
+
+				cout << "- ";
+				symbolPrint('S');
+				cout << " = Safe Spot" << endl;
+
+				cout << "- ";
+				symbolPrint('P');
+				cout << " = Possible Flag" << endl << endl;
+
+				cout << "1-1" << endl;
+
+				cout << "+---+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | ";
+				symbolPrint('S');
+				cout << " |   |" << endl;
+				cout << "+---+---+---+---+---+" << endl;
+				cout << "| ";
+
+				SetConsoleTextAttribute(h, 9);
+				cout << "1";
+
+				for (int i = 0; i < 4; i++) {
+					cout << " | ";
+					symbolPrint('1');
+				}
+
+				SetConsoleTextAttribute(h, 15);
+				cout << " |" << endl;
+
+				cout << "+---+---+---+---+---+" << endl << endl;
+
+				cout << "- If the pattern is 1-1, there will always be a safe box which is 3 box away from a safe box" << endl << endl;
+
+				cout << "1-1 Part 2" << endl;
+
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('2');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | ";
+				symbolPrint('S');
+				cout << " |" << endl;
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('S');
+				cout << " |" << endl;
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('-');
+				cout << " | ";
+				symbolPrint('-');
+				cout << " | ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('S');
+				cout << " |" << endl;
+				cout << "+---+---+---+---+" << endl << endl;
+
+				cout << "- If the possibilities are already in the top part, then the middle and the bottom part should be safe" << endl << endl;
+
+				cout << "1-2" << endl;
+
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('S');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | F |" << endl;
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('2');
+				cout << " | ";
+				symbolPrint('2');
+				cout << " |" << endl;
+				cout << "+---+---+---+---+" << endl << endl;
+
+				cout << "- If the case is 1-2, the top right of 2 is a bomb and the top left of 1 is a safe box" << endl;
+				cout << "- If the case is 2-1, the top left of 2 is a bomb and the top right of 1 is a safe box" << endl << endl;
+
+				cout << "1-2 Part 2" << endl;
+
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('2');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | ";
+				symbolPrint('P');
+				cout << " | ";
+				symbolPrint('F');
+				cout << " |" << endl;
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('4');
+				cout << " | ";
+				symbolPrint('F');
+				cout << " |" << endl;
+				cout << "+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('-');
+				cout << " | ";
+				symbolPrint('-');
+				cout << " | ";
+				symbolPrint('2');
+				cout << " | ";
+				symbolPrint('F');
+				cout << " |" << endl;
+				cout << "+---+---+---+---+" << endl << endl;
+
+				cout << "- There is 5 spot left for the bomb. Because the 2 possible box is already taken, so the remaining 3 should be a bomb" << endl << endl;
+
 				cout << "1-2-1" << endl;
 				cout << "+---+---+---+" << endl;
 				cout << "| F |   | F |" << endl;
 				cout << "+---+---+---+" << endl;
 				cout << "| ";
-
-				SetConsoleTextAttribute(h, 3);
-				cout << "1";
-
+				symbolPrint('1');
 				cout << " | ";
-				SetConsoleTextAttribute(h, 10);
-				cout << "2";
-
+				symbolPrint('2');
 				cout << " | ";
-				SetConsoleTextAttribute(h, 3);
-				cout << "1";
-
-				SetConsoleTextAttribute(h, 15);
+				symbolPrint('1');
 				cout << " |" << endl;
 
 				cout << "+---+---+---+" << endl << endl;
@@ -201,26 +332,35 @@ void Game::instructions() {
 				cout << "|   | F | F |   |" << endl;
 				cout << "+---+---+---+---+" << endl;
 				cout << "| ";
-
-				SetConsoleTextAttribute(h, 3);
-				cout << "1";
-
+				symbolPrint('1');
 				cout << " | ";
-				SetConsoleTextAttribute(h, 10);
-				cout << "2";
-
+				symbolPrint('2');
 				cout << " | ";
-				SetConsoleTextAttribute(h, 10);
-				cout << "2";
-
+				symbolPrint('2');
 				cout << " | ";
-				SetConsoleTextAttribute(h, 3);
-				cout << "1";
-
-				SetConsoleTextAttribute(h, 15);
+				symbolPrint('1');
 				cout << " |" << endl;
 
-				cout << "+---+---+---+" << endl << endl;
+				cout << "+---+---+---+---+" << endl << endl;
+
+				cout << "1-2-3-2-1" << endl;
+
+				cout << "+---+---+---+---+---+" << endl;
+				cout << "|   | F | F | F |   |" << endl;
+				cout << "+---+---+---+---+---+" << endl;
+				cout << "| ";
+				symbolPrint('1');
+				cout << " | ";
+				symbolPrint('2');
+				cout << " | ";
+				symbolPrint('3');
+				cout << " | ";
+				symbolPrint('2');
+				cout << " | ";
+				symbolPrint('1');
+				cout << " |" << endl;
+
+				cout << "+---+---+---+---+---+" << endl << endl;
 
 				cout << "Press 'Enter' to go back to instructions menu!";
 				cin.get();
@@ -229,4 +369,31 @@ void Game::instructions() {
 		}
 	}
 	while (warp != 5);
+}
+
+void Game::symbolPrint(char symbol) {
+	if (symbol == '-')
+		SetConsoleTextAttribute(h, 8);
+	else if (symbol == '1')
+		SetConsoleTextAttribute(h, 9);
+	else if (symbol == '2')
+		SetConsoleTextAttribute(h, 10);
+	else if (symbol == '3')
+		SetConsoleTextAttribute(h, 12);
+	else if (symbol == '4')
+		SetConsoleTextAttribute(h, 13);
+	else if (symbol == '5' || symbol == 'P')
+		SetConsoleTextAttribute(h, 14);
+	else if (symbol == '6' || symbol == 'S')
+		SetConsoleTextAttribute(h, 11);
+	else if (symbol == '7')
+		SetConsoleTextAttribute(h, 6);
+	else if (symbol == '8')
+		SetConsoleTextAttribute(h, 7);
+	else if (symbol == '-')
+		SetConsoleTextAttribute(h, 8);
+	
+	cout << symbol;
+
+	SetConsoleTextAttribute(h, 15);
 }

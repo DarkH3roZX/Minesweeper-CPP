@@ -343,9 +343,11 @@ int main()
                         cout << "6. Turn ";
 
                         if (noGuess)
-                            cout << "OFF no guess mode" << endl;
+                            cout << "OFF no guess mode ";
                         else
-                            cout << "ON no guess mode" << endl;
+                            cout << "ON no guess mode ";
+
+                        cout << "(Coming Soon!)" << endl;
 
                         cout << "7. Main Menu" << endl << endl;
 
@@ -443,21 +445,8 @@ int main()
 
                     // Turn on/off anti guess
                     else if (difficultyWarp == 6) {
-                        // Turn OFF
-                        if (noGuess) {
-                            noGuess = false;
-
-                            cout << "No Guess is now turned OFF";
-                            cin.get();
-                        }
-
-                        // Turn ON
-                        else {
-                            noGuess = true;
-
-                            cout << "No Guess is now turned ON";
-                            cin.get();
-                        }
+                        cout << "This feature is unavailable yet!";
+                        cin.get();
 
                         continue;
                     }
@@ -837,7 +826,7 @@ int main()
                                 if (doubleMoney)
                                     cout << (mines + mines / 4) * 2 << " (2x Money)" << endl;
                                 else
-                                    cout << (mines + mines / 4) * 2 << endl;
+                                    cout << (mines + mines / 4) << endl;
 
                                 // Money Display and adds the price
                                 // Valid Input prevents money duplicating by inputting an invalid input
@@ -981,11 +970,11 @@ int main()
 
                         cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", "Num", "Item Name", "Price", "Owned") << endl;
                         cout << "===========================================" << endl;
-                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 1, "Gold Pig", "100 LEL", player[currPlayer].getInventory(0)) << endl;
-                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 2, "Time Machine", "300 LEL", player[currPlayer].getInventory(1)) << endl;
-                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 3, "Magnifying Glass", "500 LEL", player[currPlayer].getInventory(2)) << endl;
-                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 4, "Mine Detector", "750 LEL", player[currPlayer].getInventory(3)) << endl;
-                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 5, "Force Field", "1000 LEL", player[currPlayer].getInventory(4)) << endl << endl;
+                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 1, "Gold Pig", "50 LEL", player[currPlayer].getInventory(0)) << endl;
+                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 2, "Time Machine", "150 LEL", player[currPlayer].getInventory(1)) << endl;
+                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 3, "Magnifying Glass", "225 LEL", player[currPlayer].getInventory(2)) << endl;
+                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 4, "Mine Detector", "300 LEL", player[currPlayer].getInventory(3)) << endl;
+                        cout << format(" {0:<3} | {1:<16} | {2:<8} | {3:<6} ", 5, "Force Field", "400 LEL", player[currPlayer].getInventory(4)) << endl << endl;
 
                         cout << "Cash : " << player[currPlayer].moneyDisplay() << endl;
                         cout << "Pick an item to buy (Input 6 to exit to main menu) : ";
@@ -1020,15 +1009,15 @@ int main()
                         player[currPlayer].editInventory(shopWarp - 1, buyAmount, "Buy");
 
                         if (shopWarp == 1)
-                            player[currPlayer].editMoney(100, '-');
+                            player[currPlayer].editMoney(50, '-');
                         else if (shopWarp == 2)
-                            player[currPlayer].editMoney(300, '-');
+                            player[currPlayer].editMoney(150, '-');
                         else if (shopWarp == 3)
-                            player[currPlayer].editMoney(500, '-');
+                            player[currPlayer].editMoney(225, '-');
                         else if (shopWarp == 4)
-                            player[currPlayer].editMoney(750, '-');
+                            player[currPlayer].editMoney(300, '-');
                         else if (shopWarp == 5)
-                            player[currPlayer].editMoney(1000, '-');
+                            player[currPlayer].editMoney(400, '-');
 
                         cout << "Purchase Successful, Press 'Enter' to continue!";
                         cin.get();
@@ -1121,11 +1110,13 @@ int main()
                         cin >> amountInput;
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-                        player[currPlayer].editInventory(itemCheatWarp, amountInput, "Buy");
+                        player[currPlayer].editInventory(itemCheatWarp - 1, amountInput, "Buy");
 
                         cout << "Item cheat success!";
                         cin.get();
                     }
+
+                    playerServices.userFileUpdate(player);
                 }
                 while (adminWarp != 4);
             }
