@@ -7,6 +7,7 @@ using namespace std;
 
 class PlayerData {
 	private:
+		// Player Data
 		char username[21];
 		char password[101];
 
@@ -17,6 +18,9 @@ class PlayerData {
 		int encryptionKey;
 		int itemInventory[5];
 		int bestTimeSecond[4];
+
+		// Utility
+		int levelPercentage;
 
 	public:
 		PlayerData();
@@ -43,7 +47,7 @@ class PlayerData {
 
 		int moneyDisplay();
 
-		int getLevel(int wins, int loses);
+		int getLevel(int wins);
 
 		int getWins();
 

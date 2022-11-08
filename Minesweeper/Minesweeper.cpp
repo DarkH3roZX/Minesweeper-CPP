@@ -824,6 +824,11 @@ int main()
                                     player[currPlayer].editTime(difficulty, timeSecond);
                                 }
 
+                                // Level Up Display
+                                if (playerServices.getLevel(player[currPlayer].getWins()) != playerServices.getLevel(player[currPlayer].getWins() + 1)) {
+                                    cout << "LEVEL UP (" << playerServices.getLevel(player[currPlayer].getWins() + 1) << ")!!" << endl;
+                                }
+
                                 game.timeDisplay(timeSecond);
 
                                 // Stats display
@@ -908,7 +913,7 @@ int main()
                     cout << "NO DATA" << endl;
                 }
                 else {
-                    cout << player[currPlayer].getTime(0) / 60 << " : ";
+                    cout << player[currPlayer].getTime(0) / 60 << ":";
 
                     if (player[currPlayer].getTime(0) % 60 < 10)
                         cout << "0" << player[currPlayer].getTime(0) % 60 << endl;
@@ -923,7 +928,7 @@ int main()
                     cout << "NO DATA" << endl;
                 }
                 else {
-                    cout << player[currPlayer].getTime(1) / 60 << " : ";
+                    cout << player[currPlayer].getTime(1) / 60 << ":";
 
                     if (player[currPlayer].getTime(1) % 60 < 10)
                         cout << "0" << player[currPlayer].getTime(1) % 60 << endl;
@@ -938,7 +943,7 @@ int main()
                     cout << "NO DATA" << endl;
                 }
                 else {
-                    cout << player[currPlayer].getTime(2) / 60 << " : ";
+                    cout << player[currPlayer].getTime(2) / 60 << ":";
 
                     if (player[currPlayer].getTime(2) % 60 < 10)
                         cout << "0" << player[currPlayer].getTime(2) % 60 << endl;
@@ -953,7 +958,7 @@ int main()
                     cout << "NO DATA" << endl;
                 }
                 else {
-                    cout << player[currPlayer].getTime(3) / 60 << " : ";
+                    cout << player[currPlayer].getTime(3) / 60 << ":";
 
                     if (player[currPlayer].getTime(3) % 60 < 10)
                         cout << "0" << player[currPlayer].getTime(3) % 60 << endl;

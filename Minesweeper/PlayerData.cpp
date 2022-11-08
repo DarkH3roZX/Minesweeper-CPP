@@ -123,7 +123,7 @@ void PlayerData::userFileUpdate(vector<PlayerData> player) {
 }
 
 void PlayerData::profileDisplay(PlayerData player) {
-	cout << format("{0:<24} | Level {1:<18}", "Welcome!", player.getLevel(player.getWins(), player.getLoses())) << endl;
+	cout << format("{0:<24} | Level {1} ({2}%)", "Welcome!", getLevel(player.getWins()), levelPercentage) << endl;
 	cout << format("{0:<24} | {1} LEL", player.getUsername(), player.moneyDisplay()) << endl << endl;
 }
 
@@ -138,8 +138,25 @@ int PlayerData::moneyDisplay() {
 	return LEL;
 }
 
-int PlayerData::getLevel(int wins, int loses) {
-	return (wins * 5 + loses) / 40 + 1;
+int PlayerData::getLevel(int wins) {
+	int xp = 0;
+	int result = 1;
+	int threshold = 1;
+
+	while (true) {
+		if (xp + threshold > wins)
+			break;
+
+		xp += threshold;
+		result++;
+
+		if (result % 5 == 0)
+			threshold++;
+	}
+
+	levelPercentage = (wins - xp) * 100 / threshold;
+
+	return result;
 }
 
 int PlayerData::getWins() {
