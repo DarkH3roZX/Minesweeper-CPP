@@ -8,7 +8,7 @@ void Game::exitMenu() {
 	cout << "=====================" << endl << endl;
 
 	cout << "Made by DarkH3roZX" << endl;
-	cout << "Supervised by adVenT" << endl;
+	cout << "Supervised by jowenzero" << endl;
 	cin.get();
 }
 

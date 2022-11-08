@@ -441,6 +441,8 @@ int main()
 
                             continue;
                         }
+
+                        difficulty = 4;
                     }
 
                     // Turn on/off anti guess
@@ -818,7 +820,7 @@ int main()
                                 cout << "============" << endl << endl;
 
                                 // Time and best time display
-                                if (player[currPlayer].getTime(difficulty) == -1 || timeSecond < player[currPlayer].getTime(difficulty)) {
+                                if (difficulty != 4 && (player[currPlayer].getTime(difficulty) == -1 || timeSecond < player[currPlayer].getTime(difficulty))) {
                                     cout << "NEW BEST TIME!!" << endl;
 
                                     player[currPlayer].editTime(difficulty, timeSecond);
