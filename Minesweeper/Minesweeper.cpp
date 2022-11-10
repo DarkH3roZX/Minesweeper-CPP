@@ -38,6 +38,7 @@ int main()
     // Warp Variables
     int mainWarp;
     int loginWarp;
+    int checkWarp;
     int shopWarp;
     int gameWarp;
     int itemWarp;
@@ -599,8 +600,22 @@ int main()
 
                             // Restart
                             else if (gameWarp == 3) {
-                                deathFlag = true;
-                                player[currPlayer].statsUpdate(2);
+                                do
+                                {
+                                    cout << "Are you sure you want to restart?" << endl;
+                                    cout << "1. Yes" << endl;
+                                    cout << "2. No" << endl << endl;
+
+                                    cout << "Your Choice : ";
+                                    cin >> checkWarp;
+                                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                }
+                                while (checkWarp != 1 && checkWarp != 2);
+
+                                if (checkWarp == 1) {
+                                    deathFlag = true;
+                                    player[currPlayer].statsUpdate(2);
+                                }
                             }
 
                             // Use Item
@@ -722,12 +737,26 @@ int main()
 
                             // Exit
                             else if (gameWarp == 5) {
-                                endGame = true;
-                                deathFlag = true;
-                                
-                                // File Update
-                                player[currPlayer].statsUpdate(2);
-                                playerServices.userFileUpdate(player);
+                                do
+                                {
+                                    cout << "Are you sure you want to exit?" << endl;
+                                    cout << "1. Yes" << endl;
+                                    cout << "2. No" << endl << endl;
+
+                                    cout << "Your Choice : ";
+                                    cin >> checkWarp;
+                                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                }
+                                while (checkWarp != 1 && checkWarp != 2);
+
+                                if (checkWarp == 1) {
+                                    endGame = true;
+                                    deathFlag = true;
+
+                                    // File Update
+                                    player[currPlayer].statsUpdate(2);
+                                    playerServices.userFileUpdate(player);
+                                }
                             }
 
                             // Check death
