@@ -184,7 +184,9 @@ int main()
 
                     // Password Input
                     cout << "Password : ";
+                    SetConsoleTextAttribute(h, 255);
                     getline(cin, passwordInput);
+                    SetConsoleTextAttribute(h, 15);
 
                     // Checks the password
                     if (currPlayer == -1) {
@@ -248,10 +250,14 @@ int main()
 
                     // Password and Confirm Password Input
                     cout << "Password : ";
+                    SetConsoleTextAttribute(h, 255);
                     getline(cin, passwordInput);
+                    SetConsoleTextAttribute(h, 15);
 
                     cout << "Confirm password : ";
+                    SetConsoleTextAttribute(h, 255);
                     getline(cin, confirmInput);
+                    SetConsoleTextAttribute(h, 15);
 
                     // Checks whether password and confirm password is the same
                     if (passwordInput != confirmInput) {
