@@ -79,6 +79,8 @@ void Game::instructions() {
 
 			cout << "Your Choice : ";
 			cin >> warp;
+			if (cin.fail())
+				cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
 		while (warp != 1 && warp != 2 && warp != 3 && warp != 4 && warp != 5);

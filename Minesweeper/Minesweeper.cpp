@@ -156,8 +156,10 @@ int main()
                     cout << "2. Register" << endl;
                     cout << "3. Exit" << endl << endl;
 
-                    cout << "Your choice : ";
+                    cout << "Your Choice : ";
                     cin >> loginWarp;
+                    if (cin.fail())
+                        cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 }
                 while (loginWarp != 1 && loginWarp != 2 && loginWarp != 3);
@@ -324,6 +326,8 @@ int main()
 
                 cout << "Your Choice : ";
                 cin >> mainWarp;
+                if (cin.fail())
+                    cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
             while (mainWarp != 1 && mainWarp != 2 && mainWarp != 3 && mainWarp != 4 && mainWarp != 5 && mainWarp != 6 && mainWarp != 276145);
@@ -361,6 +365,8 @@ int main()
                         // Choice Input
                         cout << "Your Choice : ";
                         cin >> difficultyWarp;
+                        if (cin.fail())
+                            cin.clear();
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     }
                     while (difficultyWarp != 1 && difficultyWarp != 2 && difficultyWarp != 3 && difficultyWarp != 4 && difficultyWarp != 5 && difficultyWarp != 6 && difficultyWarp != 7);
@@ -504,6 +510,8 @@ int main()
 
                                 cout << "Your Choice : ";
                                 cin >> gameWarp;
+                                if (cin.fail())
+                                    cin.clear();
                                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                             }
                             while (gameWarp != 1 && gameWarp != 2 && gameWarp != 3 && gameWarp != 4 && gameWarp != 5);
@@ -614,6 +622,8 @@ int main()
 
                                     cout << "Your Choice : ";
                                     cin >> checkWarp;
+                                    if (cin.fail())
+                                        cin.clear();
                                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 }
                                 while (checkWarp != 1 && checkWarp != 2);
@@ -637,6 +647,8 @@ int main()
 
                                     cout << "Your Choice : ";
                                     cin >> itemWarp;
+                                    if (cin.fail())
+                                        cin.clear();
                                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 }
                                 while (itemWarp != 1 && itemWarp != 2 && itemWarp != 3 && itemWarp != 4 && itemWarp != 5 && itemWarp != 6);
@@ -751,6 +763,8 @@ int main()
 
                                     cout << "Your Choice : ";
                                     cin >> checkWarp;
+                                    if (cin.fail())
+                                        cin.clear();
                                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 }
                                 while (checkWarp != 1 && checkWarp != 2);
@@ -816,6 +830,8 @@ int main()
                                 cout << "2. Game Menu" << endl;
                                 cout << "Your Choice : ";
                                 cin >> endGameWarp;
+                                if (cin.fail())
+                                    cin.clear();
                                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
                                 if (endGameWarp != 1 && endGameWarp != 2)
@@ -894,6 +910,8 @@ int main()
                                 cout << "2. Game Menu" << endl;
                                 cout << "Your Choice : ";
                                 cin >> endGameWarp;
+                                if (cin.fail())
+                                    cin.clear();
                                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                 
                                 if (endGameWarp != 1 && endGameWarp != 2)
@@ -1117,6 +1135,8 @@ int main()
 
                         cout << "Your Choice : ";
                         cin >> adminWarp;
+                        if (cin.fail())
+                            cin.clear();
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     }
                     while (adminWarp != 1 && adminWarp != 2 && adminWarp != 3 && adminWarp != 4);
