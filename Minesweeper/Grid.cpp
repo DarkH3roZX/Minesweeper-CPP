@@ -15,6 +15,7 @@ void Grid::open(int x, int y, bool* secondChance) {
 	int flags = 0;
 
 	bool isValid = true;
+	bool forceFieldDie = false;
 
 	/* Checks if the player inputs the valid box to open */
 	// Invalid case 1 = Inputted box is a flag
@@ -76,10 +77,17 @@ void Grid::open(int x, int y, bool* secondChance) {
 		for (int i = (x - 1 >= 0 ? x - 1 : x); i <= (x + 1 < row ? x + 1 : x); i++) {
 			for (int j = (y - 1 >= 0 ? y - 1 : y); j <= (y + 1 < column ? y + 1 : y); j++) {
 				if (!grid[i][j].isFlag) {
+					if (*secondChance && grid[i][j].symbol == '*') {
+						forceFieldDie = true;
+						grid[i][j].isFlag = true;
+
+						continue;
+					}
+
 					grid[i][j].isOpen = true;
 
 					// Death Open
-					if (grid[i][j].symbol == '*') {
+					if (grid[i][j].symbol == '*' && !(*secondChance)) {
 						grid[i][j].symbol = 'X';
 					}
 
@@ -89,6 +97,13 @@ void Grid::open(int x, int y, bool* secondChance) {
 					}
 				}
 			}
+		}
+
+		if (forceFieldDie) {
+			cout << "You have been protected by a Force Field!";
+			cin.get();
+
+			*secondChance = false;
 		}
 	}
 
